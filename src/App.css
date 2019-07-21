@@ -1,0 +1,9 @@
+/* App related styles */
+
+.App {
+  height: 100%;
+  width: 100%;
+
+  padding: 5% 5% 0;
+  display: grid;
+}

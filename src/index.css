@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,700&display=swap");
+
+/* Bootstrap code. Style resets */
+:root {
+  --duration: 0.8s;
+  --half-duration: calc(var(--duration) / 2);
+
+  --app-background-color: #000;
+  --app-font-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html,
+body,
+.root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+body {
+  background: var(--app-background-color);
+  color: var(--app-font-color);
+  font-family: "DM Sans", sans-serif;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}

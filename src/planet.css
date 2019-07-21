@@ -1,0 +1,62 @@
+.planet {
+  width: 100%;
+  height: 95%;
+
+  display: grid;
+  grid-column: 1;
+  grid-row: 1 / -1;
+
+  grid-template-areas:
+    "title title title details details"
+    "x planet planet planet photos";
+
+  grid-template-rows: 60% 1fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+
+  overflow: hidden;
+
+  visibility: hidden;
+}
+
+.planet::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 50%);
+}
+
+.planet.active {
+  visibility: visible;
+}
+
+.planet-title {
+  display: block;
+  grid-area: title;
+}
+
+.planet-details {
+  display: flex;
+  grid-area: details;
+  justify-content: space-between;
+}
+
+.planet-detail-value {
+  font-weight: 400;
+}
+
+.planet-subtitle-text,
+.planet-detail-title {
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.planet-figure {
+  grid-area: planet;
+}
+
+.planet-image {
+  width: 100%;
+}
