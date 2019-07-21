@@ -8,10 +8,19 @@ import "./App.css";
 // Gravity measure: m/s²
 
 function App() {
+  const [currentActiveId, setCurrentActiveId] = React.useState(0);
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={() => setCurrentActiveId((currentActiveId + 1) % planets.length)}
+    >
       {planets.map((planet, id) => (
-        <Planet key={planet.name} planet={planet} active={id === 0} />
+        <Planet
+          key={planet.name}
+          planet={planet}
+          active={id === currentActiveId}
+        />
       ))}
     </div>
   );

@@ -16,6 +16,8 @@
   overflow: hidden;
 
   visibility: hidden;
+  transition: visibility 1ms linear;
+  transition-delay: var(--duration);
 }
 
 .planet::after {
@@ -37,10 +39,30 @@
   grid-area: title;
 }
 
+.planet-title-word {
+  overflow: hidden;
+}
+
+.planet-title-char {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform var(--duration) ease;
+  transition-delay: calc(var(--char-index) * 0.1s);
+}
+
+.active .planet-title-char {
+  transform: translateY(0%);
+  transition-delay: calc((var(--duration) / 2) + (var(--char-index) * 0.1s));
+}
+
 .planet-details {
   display: flex;
   grid-area: details;
   justify-content: space-between;
+}
+
+.planet-detail {
+  flex: 1 0;
 }
 
 .planet-detail-value {
@@ -49,12 +71,20 @@
 
 .planet-subtitle-text,
 .planet-detail-title {
-  opacity: 0.5;
+  color: rgb(120, 120, 120);
   font-weight: 400;
 }
 
 .planet-figure {
+  opacity: 0;
   grid-area: planet;
+
+  transition: opacity var(--duration);
+}
+
+.active .planet-figure {
+  opacity: 1;
+  transition-delay: var(--duration);
 }
 
 .planet-image {

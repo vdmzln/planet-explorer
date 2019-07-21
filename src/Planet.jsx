@@ -1,6 +1,14 @@
 import React from "react";
 import "./planet.css";
 
+function Splitting({ children = "", ...props }) {
+  return [...children].map((char, i) => (
+    <span {...props} key={i} style={{ "--char-index": i }}>
+      {char}
+    </span>
+  ));
+}
+
 export default function Planet({ planet, active }) {
   const { name, image, details } = planet;
 
@@ -9,7 +17,9 @@ export default function Planet({ planet, active }) {
   return (
     <div className={`planet ${active ? "active" : ""}`}>
       <div className="planet-title">
-        <h1>{name}</h1>
+        <h1 className="planet-title-word">
+          <Splitting className="planet-title-char">{name}</Splitting>
+        </h1>
         <h4 className="planet-subtitle-text">Lorem ipsum dolor sit amet.</h4>
       </div>
       <div className="planet-details">
@@ -27,7 +37,7 @@ export default function Planet({ planet, active }) {
         </div>
       </div>
       <figure className="planet-figure">
-        <img className="planet-image" src={imageUrl} />
+        <img className="planet-image" src={imageUrl} alt={`Planet ${name}`} />
       </figure>
     </div>
   );
