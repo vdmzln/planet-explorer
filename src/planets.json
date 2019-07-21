@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Mercury",
+    "image": "mercury.webp",
+    "details": {
+      "tilt": 0.03,
+      "gravity": 3.7,
+      "days": 10
+    }
+  },
+  {
+    "name": "Venus",
+    "image": "venus.webp",
+    "details": {
+      "tilt": 2.64,
+      "gravity": 8.87,
+      "days": 20
+    }
+  },
+  {
+    "name": "Earth",
+    "image": "earth.webp",
+    "details": {
+      "tilt": 23.44,
+      "gravity": 9.807,
+      "days": 30
+    }
+  },
+  {
+    "name": "Mars",
+    "image": "mars.webp",
+    "details": {
+      "tilt": 25.19,
+      "gravity": 3.711,
+      "days": 40
+    }
+  },
+  {
+    "name": "Jupiter",
+    "image": "jupiter.webp",
+    "details": {
+      "tilt": 3.13,
+      "gravity": 24.79,
+      "days": 50
+    }
+  },
+  {
+    "name": "Saturn",
+    "image": "saturn.webp",
+    "details": {
+      "tilt": 26.73,
+      "gravity": 10.44,
+      "days": 60
+    }
+  },
+  {
+    "name": "Uranus",
+    "image": "uranus.webp",
+    "details": {
+      "tilt": 82.23,
+      "gravity": 8.87,
+      "days": 50
+    }
+  },
+  {
+    "name": "Neptune",
+    "image": "neptune.webp",
+    "details": {
+      "tilt": 28.32,
+      "gravity": 11.15,
+      "days": 10
+    }
+  }
+]
