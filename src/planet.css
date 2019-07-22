@@ -1,6 +1,6 @@
 .planet {
   width: 100%;
-  height: 95%;
+  height: 100%;
 
   display: grid;
   grid-column: 1;
@@ -10,7 +10,7 @@
     "title title title details details"
     "x planet planet planet photos";
 
-  grid-template-rows: 60% 1fr;
+  grid-template-rows: 40% 1fr;
   grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
 
   overflow: hidden;
@@ -27,7 +27,7 @@
   width: 100%;
   height: 45%;
 
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 50%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 30%);
 }
 
 .planet.active {
