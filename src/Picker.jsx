@@ -66,8 +66,7 @@ export default function Picker({
 
   return (
     <Svg innerRef={svgRef} id="picker">
-      <Path innerRef={pathRef} id="path" d={`M 5, 50 a 1,1 0 1,1 90,0`} />
-
+      <Path innerRef={pathRef} id="path" d="M 5, 50 a 1,1 0 1,1 90,0" />
       <text>
         <textPath
           ref={textRef}
