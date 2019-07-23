@@ -33,29 +33,32 @@ function useAvailableLength({ pathRef, textRef }) {
 
 function usePickerSwitch({ svgRef, length, defaultActive = 0 }) {
   const [currentActive, setCurrentActive] = React.useState(defaultActive);
+  const [previousActive, setPreviousActive] = React.useState(null);
 
   React.useEffect(() => {
     const { current: svgNode } = svgRef;
 
+    setPreviousActive(currentActive);
     svgNode.style.setProperty("--length", length);
     svgNode.style.setProperty("--active", currentActive);
   }, [svgRef, currentActive, length]);
 
-  return setCurrentActive;
+  return [currentActive, previousActive, setCurrentActive];
 }
 
 export default function Picker({
   items,
   fontSize = 2,
   startOffset = "0",
-  defaultActive = 0
+  defaultActive = 0,
+  onClick = () => {}
 }) {
   const svgRef = React.createRef();
   const pathRef = React.createRef();
   const textRef = React.createRef();
 
   const availableLength = useAvailableLength({ pathRef, textRef });
-  const setCurrentActive = usePickerSwitch({
+  const [currentActive, previousActive, setCurrentActive] = usePickerSwitch({
     svgRef,
     length: items.length - 1,
     defaultActive
@@ -78,6 +81,10 @@ export default function Picker({
               <tspan
                 onClick={() => {
                   setCurrentActive(i);
+                  onClick({ current: i, previous: previousActive });
+                }}
+                style={{
+                  "--opacity": getOpacity(currentActive, i)
                 }}
                 x={percent * availableLength}
                 key={i}
@@ -90,4 +97,12 @@ export default function Picker({
       </text>
     </Svg>
   );
+}
+
+function getOpacity(currentActive, i) {
+  // Item after 1 / step will be completely transparent
+  const step = 0.25;
+  const result = 1 - step * Math.abs(currentActive - i);
+
+  return result >= 0 ? result : 0;
 }
