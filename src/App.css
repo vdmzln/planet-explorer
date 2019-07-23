@@ -25,7 +25,7 @@
 
 #picker {
   grid-area: picker;
-  --range: 170deg;
+  --range: 175deg;
   --rotate: calc(
     var(--active, 0) / var(--length) * (-1 * var(--range)) + var(--range) / 2
   );
@@ -33,7 +33,7 @@
   transform-origin: center center;
   transform: rotate(var(--rotate));
 
-  transition: transform 1s ease-out;
+  transition: transform calc(var(--duration) * 2) ease-in-out;
 }
 
 #picker tspan {
@@ -41,4 +41,7 @@
   pointer-events: auto;
   user-select: none;
   fill: #fff;
+
+  transition: opacity calc(var(--duration) * 2);
+  opacity: var(--opacity);
 }
