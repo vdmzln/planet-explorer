@@ -8,14 +8,15 @@ import "./App.css";
 
 // Gravity measure: m/s²
 
+const DEFAULT_ACTIVE_PLANET = 4;
+
 function App() {
-  const [currentActiveId, setCurrentActiveId] = React.useState(0);
+  const [currentActiveId, setCurrentActiveId] = React.useState(
+    DEFAULT_ACTIVE_PLANET
+  );
 
   return (
-    <div
-      className="App"
-      onClick={() => setCurrentActiveId((currentActiveId + 1) % planets.length)}
-    >
+    <div className="App">
       {planets.map((planet, id) => (
         <Planet
           key={planet.name}
@@ -25,9 +26,12 @@ function App() {
       ))}
       <div className="picker-container">
         <Picker
-          defaultActive={3}
+          defaultActive={currentActiveId}
           id="picker"
           items={planets.map(({ name }) => name)}
+          onClick={params => {
+            setCurrentActiveId(params.current);
+          }}
         />
       </div>
     </div>
