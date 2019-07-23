@@ -23,12 +23,13 @@ function App() {
           active={id === currentActiveId}
         />
       ))}
-      <Picker
-        fontSize="2em"
-        defaultActive={3}
-        id="picker"
-        items={planets.map(({ name }) => name)}
-      />
+      <div className="picker-container">
+        <Picker
+          defaultActive={3}
+          id="picker"
+          items={planets.map(({ name }) => name)}
+        />
+      </div>
     </div>
   );
 }
