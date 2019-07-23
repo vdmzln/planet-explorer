@@ -30,7 +30,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 30%);
 }
 
-.planet.active {
+.active {
   visibility: visible;
 }
 
@@ -46,13 +46,32 @@
 .planet-title-char {
   display: inline-block;
   transform: translateY(100%);
-  transition: transform var(--duration) ease;
+  transition: transform var(--duration) ease-in-out;
   transition-delay: calc(var(--char-index) * 0.1s);
 }
 
 .active .planet-title-char {
-  transform: translateY(0%);
-  transition-delay: calc((var(--duration) / 2) + (var(--char-index) * 0.1s));
+  transform: translateY(0);
+  transition-delay: calc((var(--duration)) + (var(--char-index) * 0.1s));
+}
+
+.planet-subtitle-text {
+  overflow: hidden;
+}
+
+.planet-subtitle-text-span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+
+  transition: transform var(--duration), opacity var(--duration);
+}
+
+.active .planet-subtitle-text-span {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: var(--duration);
 }
 
 .planet-details {
