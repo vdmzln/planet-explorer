@@ -20,7 +20,11 @@ export default function Planet({ planet, active }) {
         <h1 className="planet-title-word">
           <Splitting className="planet-title-char">{name}</Splitting>
         </h1>
-        <h4 className="planet-subtitle-text">Lorem ipsum dolor sit amet.</h4>
+        <h4 className="planet-subtitle-text">
+          <span className="planet-subtitle-text-span">
+            Lorem ipsum dolor sit amet.
+          </span>
+        </h4>
       </div>
       <div className="planet-details">
         <div className="planet-detail">
