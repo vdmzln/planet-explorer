@@ -1,5 +1,6 @@
 import React from "react";
 import Planet from "./Planet";
+import Picker from "./Picker";
 
 import planets from "./planets.json";
 
@@ -22,6 +23,12 @@ function App() {
           active={id === currentActiveId}
         />
       ))}
+      <Picker
+        fontSize="2em"
+        defaultActive={3}
+        id="picker"
+        items={planets.map(({ name }) => name)}
+      />
     </div>
   );
 }

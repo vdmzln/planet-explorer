@@ -1,19 +1,4 @@
-/* App related styles */
-
-.App {
-  height: 100%;
-  width: 100%;
-
-  padding: 5% 5% 0;
-  display: grid;
-}
-
 #picker {
-  bottom: -50%;
-  position: absolute;
-
-  transform: translateY(40%);
-
   --range: 170deg;
   --rotate: calc(
     var(--active, 0) / var(--length) * (-1 * var(--range)) + var(--range) / 2
@@ -29,5 +14,5 @@
   cursor: pointer;
   pointer-events: auto;
   user-select: none;
-  fill: #fff;
+  fill: #000;
 }
