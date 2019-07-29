@@ -28,11 +28,11 @@ export default function Planet({ planet, active }) {
       </div>
       <div className="planet-details">
         <div className="planet-detail">
-          <h1 className="planet-detail-value">{details.tilt}</h1>
+          <h1 className="planet-detail-value">{details.tilt} *</h1>
           <h4 className="planet-detail-title">Axial tilt</h4>
         </div>
         <div className="planet-detail">
-          <h1 className="planet-detail-value">{details.gravity}</h1>
+          <h1 className="planet-detail-value">{details.gravity} m/s²</h1>
           <h4 className="planet-detail-title">Gravity</h4>
         </div>
         <div className="planet-detail">

@@ -7,11 +7,11 @@
   grid-row: 1 / -1;
 
   grid-template-areas:
-    "title title title details details"
-    "x planet planet planet photos";
+    "title title title details details details"
+    "x planet planet planet planet photos";
 
   grid-template-rows: 40% 1fr;
-  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
 
   overflow: hidden;
 

@@ -6,8 +6,6 @@ import planets from "./planets.json";
 
 import "./App.css";
 
-// Gravity measure: m/s²
-
 const DEFAULT_ACTIVE_PLANET = 4;
 
 function App() {
